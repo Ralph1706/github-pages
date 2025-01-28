@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 183px;
+    padding: 2rem;
+    background: linear-gradient(
+        90deg,
+        rgba(253,18,133,1)0%,
+        rgba(80,49,145,1)70%
+
+    );;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    align-self: flex-start;
+    margin-bottom: 2rem;
+}
+
+.profile-picture {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #ececec;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-name {
+    color: #ececec;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.logout-btn {
+    margin-top: auto;
+    align-self: stretch;
+    padding: 0.5rem;
+    color: white;
+    background-color: #d9534f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.logout-btn:hover {
+    background-color: #c9302c;
+}
+
+
+.logo {
+    width: 300px;
+    height: 143.422px;
+}
+
+.nav-list {
+    list-style-type: none;
+    align-items: flex-end;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: black;
+}
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+.img {
+    width: 60px;
+    height: 60px;
+}
+
+
+
+@media screen and (max-width: 5550px) {
+        .abrir-menu,
+        .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .abrir-menu {
+        color: #1c1c1c;
+    }
+
+    .cerrar-menu {
+        color: #ececec;
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #8e6995;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgb(0, 0, 0, .5);
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .nav-list li a {
+        color: #ececec;
+    }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIAM</title> 
+<link rel="icon" href="../Imagenes/icono/images.ico">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../css/style1.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+    
+    <header>
+        <img class="logo" src="../Imagenes/1.jpg" alt="logo">
+        <button id="abrir" class="abrir-menu"><i class="bi bi-three-dots"></i></button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+            <div class="profile">
+                <div class="profile-picture"><img class="img" src="../Imagenes/music-teacher-male-line-icon-vector.jpg" alt="Foto de Perfil"></div>
+                <div class="profile-name" id="user-name">Nombre Usuario</div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="../html/record academico.html">Carga de Notas</a></li>
+                <li><a href="#">Matricula Actual</a></li>
+                <li><a href="#">Material Académico</a></li>
+            </ul>
+            <button id="logout-btn" class="logout-btn" type="button">Cerrar Sesión</button>
+            
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+            const lastUser = storedUsers[storedUsers.length - 1];
+
+            if (lastUser) {
+                const userName = `${lastUser.nombre}`;
+                document.getElementById('user-name').textContent = userName;
+            }
+
+            const logoutButton = document.querySelector('#logout-btn');
+            logoutButton.addEventListener('click', () => {
+                window.location.href = "../index.html"; 
+            });
+
+        });
+
+        const nav = document.querySelector("#nav");
+        const abrir = document.querySelector("#abrir");
+        const cerrar = document.querySelector("#cerrar");
+
+        abrir.addEventListener("click", () => {
+            nav.classList.add("visible");
+        });
+
+        cerrar.addEventListener("click", () => {
+            nav.classList.remove("visible");
+        });
+    </script>
+<body>
+    <style>
+        body {
+        background-image: url('../Imagenes/OSCyL-2019-2020.jpg.webp');
+        background-size: cover;
+        background-repeat: no repeat;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .footer{
+   position: relative;
+   width: 100%;
+   background: linear-gradient(
+      90deg,
+      rgba(253,18,133,1)0%,
+      rgba(80,49,145,1)70%
+
+  );
+   min-height: 100px;
+   padding: 20px 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+ }
+
+ .social-icon{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   margin: 10px 5px;
+   flex-wrap: wrap;
+ }
+
+ .icon-elemen{
+   list-style: none;
+ }
+
+ .icon{
+   color: white;
+   font-size: 32px;
+   display: inline-block;
+   margin: 0 10px;
+   transition: 0.5s;
+ }
+
+ .icon:hover{
+   transform: translateY(-10px);
+ }
+
+ .menu{
+   display: flex;
+   justify-content: center;
+   position: relative;
+   align-items: center;
+   margin: 10px 0;
+   flex-wrap: wrap;
+ }
+
+ .menu-elem{
+   list-style: none;
+ }
+
+ .menu-icon{
+   color: white;
+   font-size: 20px;
+   display: inline-block;
+   text-decoration: none;
+   margin: 5px 10px;
+   opacity: 0.5;
+   transition: 0.3s;
+ }
+
+ .menu-icon:hover{
+   opacity: 1;
+ }
+
+ .text_f{
+   color: white;
+   text-align: center;
+   margin-top: 15px;
+   margin-bottom: 10px;
+   font-size: 20px;
+ }
+
+    </style>
+
+
+
+</body>
+</html>

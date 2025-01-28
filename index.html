@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Sistema Núcleo Paraguaná</title>
+    <link rel="icon" href="./Imagenes/icono/images.ico">
+    <link rel="stylesheet" href="css/text.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            flex: 1 1 250px;
+            max-width: 250px;
+            text-align: center;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel {
+            position: relative;
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 50%;
+            box-sizing: border-box;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .carousel img {
+            width: 80%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            justify-content: center;
+        }
+
+        .carousel p {
+            font-size: 1em;
+            color: #333;
+        }
+
+        .next, .prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next:hover, .prev:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <div class="menu container">
+                <a href="index.html" class="logo">
+                    <img src="Imagenes/3.png" alt="Logo" style="max-width: 200px;">
+                </a>
+                <input type="checkbox" id="menu">
+                <label for="menu">
+                    <img src="Imagenes/1.png" class="menu-icono" alt="">
+                </label>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="html/FIAM.html">FIAM</a></li>
+                        <li><a href="html/Estudiante.html">Estudiante</a></li>
+                        <li><a href="html/De Interes.html">De Interés</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>SOMOS EL NÚCLEO PARAGUANÁ</h1>
+
+        <h2>Programas y Escuela</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./Imagenes/slide/7.jpeg" alt="Descripción Imagen 1">
+                <p>Programa Coral</p>
+            </div>
+            <div class="gallery-item">
+                <img src="./Imagenes/slide/8.jpeg" alt="Descripción Imagen 2">
+                <p>Programa Alma Llanera</p>
+            </div>
+            <div class="gallery-item">
+                <img src="./Imagenes/slide/14.jpeg" alt="Descripción Imagen 3">
+                <p>Programa Orquestal</p>
+            </div>
+            <div class="gallery-item">
+                <img src="./Imagenes/slide/17.jpeg" alt="Descripción Imagen 4">
+                <p>Escuela de Ensamblaje de Metales</p>
+            </div>
+            <div class="gallery-item">
+                <img src="./Imagenes/slide/11.jpeg" alt="Descripción Imagen 5">
+                <p>Escuela de Violoncello</p>
+            </div>
+        </div>
+
+        <h2>Eventos y Presentaciones</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="./Imagenes/slide/18.jpeg" alt="Descripción Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes/slide/19.jpeg" alt="Descripción Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes/slide/20.jpeg" alt="Descripción Imagen 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes/slide/21.jpg" alt="Descripción Imagen 4">
+                    <p></p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes/slide/22.jpg" alt="Descripción Imagen 5">
+                    <p></p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes/slide/23.jpg" alt="Descripción Imagen 6">
+                    <p></p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes/slide/27.jpg" alt="Descripción Imagen 6">
+                    <p></p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes/slide/25.jpg" alt="Descripción Imagen 6">
+                    <p></p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes/slide/26.jpg" alt="Descripción Imagen 6">
+                    <p></p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes/slide/24.jpg" alt="Descripción Imagen 6">
+                    <p></p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes/slide/17.jpeg" alt="Descripción Imagen 6">
+                    <p></p>
+                </div>
+            </div>
+            <a class="prev" onclick="moveCarousel(-1)">&#10094;</a>
+            <a class="next" onclick="moveCarousel(1)">&#10095;</a>
+        </div>
+    </main>
+
+    <script>
+        let slideIndex = 0;
+
+        function moveCarousel(direction) {
+            const items = document.querySelectorAll('.carousel-item');
+            slideIndex = (slideIndex + direction + items.length) % items.length;
+            const offset = -slideIndex * 52;
+            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+        }
+
+        setInterval(() => moveCarousel(1), 5000);
+    </script>
+
+<footer class="footer">
+    <ul class="social-icon">
+        <li class="icon-elem">
+            <a href="https://www.youtube.com/@elsistemaparaguana" class="icon">
+                <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+        </li>
+        <li class="icon-elem">
+            <a href="https://www.facebook.com/nucleoparaguana.fundamusical/?locale=es_LA" class="icon">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+        </li>
+        <li class="icon-elem">
+            <a href="https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqbWZ4aDJJZUVXYjVlekMyMFdKQ29ockVtaFEtd3xBQ3Jtc0tsMVBKWDNwVXRULUN0LVl6OVdxQkNzaTIzWGlERk9pQWxWXzJ4WXo1T2FlcENuRUxPTUlWdjFYeV9ZSzRTc2NpNkM2cTdscEVoTDd1dzBtcmVyd091Y2NfcFo5NW5KQVhETjRPV0ZBbEdWbzh2OWJ5cw&q=https%3A%2F%2Finstagram.com%2Felsistemaparaguana" class="icon">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+        </li>
+        <li class="icon-elem">
+            <a href="nucleo.puntofijo@elsistema.org.ve" class="icon">
+                <ion-icon name="mail-outline"></ion-icon>
+            </a>
+        </li>
+    </ul>
+    <ul class="menu">
+        <li class="menu-elem">
+            <a href="" class="menu-icon"> Inicio </a>
+        </li>
+        <li class="menu-elem">
+            <a href="" class="menu-icon"> FIAM </a>
+        </li>
+        <li class="menu-elem">
+            <a href="" class="menu-icon"> Estudiante </a>
+        </li>
+        <li class="menu-elem">
+            <a href="" class="menu-icon"> De Interés </a>
+        </li>
+    </ul>
+    <p class="text_f">Nos escontramos en la Av. Coro, entre Av. Ramón Ruiz Polanco y Av. Los Caobos. Urb. Santa Irene. Punto Fijo. Edo. Falcón.</p>
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

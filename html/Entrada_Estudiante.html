@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudiantes</title> 
+<link rel="icon" href="../Imagenes/icono/images.ico">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../css/style1.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <img class="logo" src="../Imagenes/1.jpg" alt="logo">
+        <button id="abrir" class="abrir-menu"><i class="bi bi-three-dots"></i></button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+            <div class="profile">
+                <div class="profile-picture">
+                    <img class="img" src="../Imagenes/Estudiantes.png" alt="Foto de Perfil">
+                </div>
+                <div class="profile-name" id="user-name">Nombre Usuario</div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#">Planilla de Inscripción</a></li>
+                <li><a href="../html/notas.html">Record Académico</a></li>
+                <li><a href="#">Constancia de Estudio</a></li>
+                <li><a href="../html/Constancia de presentaciones.html">Constancia de Presentaciones</a></li>
+            </ul>
+            <button id="logout-btn" class="logout-btn" type="button">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div id="notasContainer"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentUser = localStorage.getItem('currentUser');
+
+
+            if (currentUser) {
+
+                const userNameElement = document.getElementById('user-name');
+                userNameElement.textContent = currentUser;
+
+                if (currentUser === "Oliver Gómez") {
+                    const userNotas = JSON.parse(localStorage.getItem('userNotas')) || {
+                        primerLapso: 0,
+                        segundoLapso: 0,
+                        tercerLapso: 0,
+                        notaDefinitiva: 0
+                    };
+
+                    const tableContainer = document.querySelector('#notasContainer');
+                    tableContainer.innerHTML = `
+                       
+                    `;
+                } else {
+                    document.querySelector('#notasContainer').innerHTML = `
+                        <p>Bienvenido, ${currentUser}. No hay notas disponibles para mostrar.</p>
+                    `;
+                }
+            } else {
+                alert("Por favor, inicia sesión.");
+                window.location.href = "../index.html";
+            }
+
+            const logoutButton = document.querySelector('#logout-btn');
+            logoutButton.addEventListener('click', () => {
+                localStorage.removeItem('currentUser'); 
+                window.location.href = "../index.html"; 
+            });
+        });
+
+        const nav = document.querySelector("#nav");
+        const abrir = document.querySelector("#abrir");
+        const cerrar = document.querySelector("#cerrar");
+
+        abrir.addEventListener("click", () => {
+            nav.classList.add("visible");
+        });
+
+        cerrar.addEventListener("click", () => {
+            nav.classList.remove("visible");
+        });
+    </script>
+
+    <style>
+        body {
+            background-image: url('../Imagenes/OSCyL-2019-2020.jpg.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</body>
+</html>

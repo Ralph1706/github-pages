@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrada Estudiante</title>
+<link rel="stylesheet" href="../css/text.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>        
+            <div class="img-con">
+                <img src="../Imagenes/2.jpg" width="300px" alt="">
+            </div>
+            <div class="content">
+                <div class="menu container">
+                    <a href="../index.html" class="logo"><img src="../Imagenes/3.png" width="300px" alt=""></a>
+                    <input type="checkbox" id="menu" />
+                    <label for="menu">
+                        <img src="Imagenes/1.png" class="menu-icono" alt="">
+                    </label>
+                    <nav class="navbar">
+                        <ul>
+                            <li><a href="../index.html">Inicio</a></li>
+                            <li><a href="./FIAM.html">FIAM</a></li>
+                            <li><a href="./Estudiante.html">Estudiante</a></li>
+                            <li><a href="./De Interes.html">De Interes</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    <div class="container">
+        <h1>Notas del Estudiante</h1>
+        <table id="notasTabla">
+            <thead>
+                <tr>
+                    <th>Primer Lapso</th>
+                    <th>Segundo Lapso</th>
+                    <th>Tercer Lapso</th>
+                    <th>Nota Definitiva</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="primerLapso"></td>
+                    <td id="segundoLapso"></td>
+                    <td id="tercerLapso"></td>
+                    <td id="notaDefinitiva"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const notas = JSON.parse(localStorage.getItem('userNotas'));
+
+        if (notas) {
+            document.getElementById('primerLapso').textContent = notas.primerLapso;
+            document.getElementById('segundoLapso').textContent = notas.segundoLapso;
+            document.getElementById('tercerLapso').textContent = notas.tercerLapso;
+            document.getElementById('notaDefinitiva').textContent = notas.notaDefinitiva;
+        } else {
+            alert('No se encontraron notas para este estudiante.');
+        }
+    </script>
+</body>
+</html>

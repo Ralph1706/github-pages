@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudiantes</title> 
+<link rel="icon" href="../Imagenes/icono/images.ico">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../css/style1.css">
+<link rel="stylesheet" href="../css/StyleFIAM.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header>
+        <img class="logo" src="../Imagenes/1.jpg" alt="logo">
+        <button id="abrir" class="abrir-menu"><i class="bi bi-three-dots"></i></button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+            <div class="profile">
+                <div class="profile-picture"><img class="img" src="../Imagenes/Estudiantes.png" alt="Foto de Perfil"></div>
+                <div class="profile-name" id="user-name">Nombre Usuario</div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#">Planilla de Inscripción</a></li>
+                <li><a href="#">Record Académico</a></li>
+                <li><a href="#">Constancia de Estudio</a></li>
+                <li><a href="../html/Constancia de presentaciones.html">Constancia de Presentaciones</a></li>
+            </ul>
+            <button id="logout-btn" class="logout-btn" type="button">Cerrar Sesión</button>
+            
+        </nav>
+    </header>
+
+    <body>
+        <section class="login_section">
+            <div class="goku">
+                <h1 class="centered">Constancia de Concierto</h1>
+                <br>
+                <div class="vegueta">
+                    <h3 class="centered"></h3>
+                    <form id="registerForm">
+                        <label for="pregunta_1">¿Qué dia se realizara la presentación?</label>
+                        <input type="text" id="pregunta_1" name="pregunta_1" required>
+    
+                        <label for="pregunta_2">¿De qué hora a que hora?</label>
+                        <input type="text" id="pregunta_2" name="pregunta_2" required>
+    
+                        <label for="pregunta_3">¿Qué dia necesita la constancia?</label>
+                        <input type="text" id="pregunta_3" name="pregunta_3" required>
+    
+                        <button type="submit">Aceptar</button>
+                        <p><a href="./Estudiante sesion.html">Cancelar</a></p>
+                        <br>
+                </div>
+                    </form>
+            
+            </div>
+        </section>
+    </body>
+
+    <script>
+        // Mostrar el nombre del usuario desde localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+            const lastUser = storedUsers[storedUsers.length - 1]; // Recuperar último usuario registrado
+
+            if (lastUser) {
+                const userName = `${lastUser.nombre}`;
+                document.getElementById('user-name').textContent = userName;
+            }
+
+            const logoutButton = document.querySelector('#logout-btn'); // Selección corregida
+            logoutButton.addEventListener('click', () => {
+                window.location.href = "index.html";
+            });
+
+        });
+
+        const nav = document.querySelector("#nav");
+        const abrir = document.querySelector("#abrir");
+        const cerrar = document.querySelector("#cerrar");
+
+        abrir.addEventListener("click", () => {
+            nav.classList.add("visible");
+        });
+
+        cerrar.addEventListener("click", () => {
+            nav.classList.remove("visible");
+        });
+    </script>
+    
+<footer class="footer">
+    <ul class="social-icon">
+        <li class="icon-elem">
+            <a href="https://www.youtube.com/@elsistemaparaguana" class="icon">
+                <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+        </li>
+        <li class="icon-elem">
+            <a href="https://www.facebook.com/nucleoparaguana.fundamusical/?locale=es_LA" class="icon">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+        </li>
+        <li class="icon-elem">
+            <a href="https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqbWZ4aDJJZUVXYjVlekMyMFdKQ29ockVtaFEtd3xBQ3Jtc0tsMVBKWDNwVXRULUN0LVl6OVdxQkNzaTIzWGlERk9pQWxWXzJ4WXo1T2FlcENuRUxPTUlWdjFYeV9ZSzRTc2NpNkM2cTdscEVoTDd1dzBtcmVyd091Y2NfcFo5NW5KQVhETjRPV0ZBbEdWbzh2OWJ5cw&q=https%3A%2F%2Finstagram.com%2Felsistemaparaguana" class="icon">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+        </li>
+        <li class="icon-elem">
+            <a href="nucleo.puntofijo@elsistema.org.ve" class="icon">
+                <ion-icon name="mail-outline"></ion-icon>
+            </a>
+        </li>
+    </ul>
+    <ul class="menu">
+        <li class="menu-elem">
+            <a href="" class="menu-icon"> Inicio </a>
+        </li>
+        <li class="menu-elem">
+            <a href="" class="menu-icon"> FIAM </a>
+        </li>
+        <li class="menu-elem">
+            <a href="" class="menu-icon"> Estudiante </a>
+        </li>
+        <li class="menu-elem">
+            <a href="" class="menu-icon"> De Interés </a>
+        </li>
+    </ul>
+    <p class="text_f">Nos escontramos en la Av. Coro, entre Av. Ramón Ruiz Polanco y Av. Los Caobos. Urb. Santa Irene. Punto Fijo. Edo. Falcón.</p>
+</footer>
+
+</body>
+</html>

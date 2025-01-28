@@ -1,0 +1,76 @@
+/*Da estilo a todo el documento estudiante.html*/
+.login_section {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    height: 100vh; 
+}
+
+/* Inicio de sesión */
+.goku {
+    width: 750px;
+    height: auto; /* Ajuste dinámico */
+    text-align: left; /* Centrar texto */
+    margin-left: 20px;
+    margin-top: 50px;
+    
+}
+
+/* Registro */
+.vegueta {
+    width: 100%; /* Ocupar ancho disponible */
+    max-width: 750px; /* Limitar tamaño máximo */
+    text-align: left; /* Centrar texto */
+}
+
+h3 {
+    text-align: left; /* Centrar títulos */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type=text], input[type=email], input[type=password], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #e6397b;
+    color: white;
+    width: 125px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
